@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="edu.iot.butter.dao.ImageDao">
+	<select id="getCount" resultType="int"><![CDATA[
+		select count(*) as total from images		
+	]]></select>
+
+	<select id="selectList" resultType="Image" 
+			parameterType="Pagination"><![CDATA[
+		select image_id, title, description, file_name, new_name, thumb_name,
+				file_size, mime_type, reg_date from ( 
+			select row_number() over (order by image_id desc) as seq,  
+				image_id, title, description, file_name, new_name, thumb_name,
+				file_size, mime_type, reg_date	 
+			from images
+		) where seq between #{start} and #{end}
+	]]></select>
+
+	<select id="selectOne" resultType="Image" parameterType="int"><![CDATA[
+		select * from images
+		where image_id = #{imageId} 		
+	]]></select>
+
+	<insert id="insert" parameterType="Image"><![CDATA[
+		insert into images 
+		(image_id, title, description, file_name, new_name, thumb_name,
+			file_size, mime_type)
+		values(
+			images_seq.nextval, #{title}, #{description}, 
+			#{fileName}, #{newName}, #{thumbName}, #{fileSize},	#{mimeType}
+		)
+	]]></insert>
+	
+	<update id="update" parameterType="Image"><![CDATA[
+		update images set 
+			title = #{title},
+			description = #{description}
+		where image_id=#{imageId}
+	]]></update>
+
+	<delete id="delete" parameterType="int"><![CDATA[
+		delete from images
+		where image_id = #{imageId}
+	]]></delete>
+
+
+
+</mapper>	
