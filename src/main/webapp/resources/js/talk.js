@@ -98,24 +98,21 @@ $.fn.talk = function(opt) {
 	opt = $.extend(opt, {panel: this});
 	var talk = new Talk(opt);
 	
-	function send(){
+	function send() {
 		var message = opt.sendMessage.val();	
 		if(message.trim() == '') return; 
 		var msg = talk.send(message);
 		talk.addSendTempl(msg);
 		opt.sendMessage.val('').focus();
-		
 	}
 	
 	// 전송 버튼 
 	opt.sendBtn.click(send);
-	
 	// 메시지 작성 input 엘리먼트의 엔터 처리
-	opt.sendMessage.keypress(function(e){
-		if(e.keyCode == 13){	//엔터 인 경우
-			send();
-		}
+	opt.sendMessage.keypress(function (e) {
+        if (e.keyCode == 13){	// 엔터 인경우 
+        	send();
+        }
 	});
-	
-	
 }
+

@@ -15,7 +15,7 @@ $(function() {
 		 writer : '${USER.userId}',
 		 replyList : $('#reply-list')
 	 }; 
-	 
+	
 	$('#reply-board').replyBoard(opt);
 	$('#reply-list').replyList(opt);
 });

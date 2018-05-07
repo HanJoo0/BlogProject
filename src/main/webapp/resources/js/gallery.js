@@ -1,15 +1,12 @@
-
-
 var templ = {
-	tableTempl : `
-		<table class = "table">
+	tableTempl :`
+		<table class="table">
 			<tbody>
 			</tbody>
 		</table>
-		
 	`,
 		
-	trTempl : function(image){
+	trTempl : function(image) {
 		return `
 		<tr>
 			<td style="width:100px">
@@ -26,25 +23,16 @@ var templ = {
 					<a href="download/${image.imageId}">
 						<i class="fa fa-download"></i>
 					</a>
-					(등록일 : <fmt:formatDate value="${image.regDate}" pattern="yyyy-MM-dd"/>)
 				</p>
 				<p>${image.description}</p>
-				
 			</td>
-		</tr>
-	`	
-	}
-			
+		</tr>		
+		`;
+	}	
+		
 }
 
-
-
-
-
-
-
-
-$.fn.gallery = function(opt){
+$.fn.gallery = function(opt) {
 	var self = this;
 	var api = new Rest(opt.url);
 	
@@ -54,10 +42,14 @@ $.fn.gallery = function(opt){
 		images.forEach(function(image){
 			var tr = templ.trTempl(image)
 			self.find('tbody').append(tr);
-			
 		})
 		
 	});
 	
 	return self;
 }
+
+
+
+
+

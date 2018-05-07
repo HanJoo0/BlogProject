@@ -24,14 +24,14 @@
 	</select>
 	
 	
-	<select id="selectOneListPerUser" parameterType="String" resultType="Talk">
-		SELECT * 
-		FROM talks
-		WHERE user_id = #{userId} AND received = 1
-		and talk_id IN (
-			SELECT max(talk_id) FROM talks 
-			WHERE user_id = #{userId} AND received = 1 
-			GROUP BY with_talk)
+	<select id="selectOneListPerUser" parameterType="String" 
+				resultType="Talk">
+		SELECT * FROM talks
+		WHERE user_id =#{userId} and received = 1  
+			and talk_id IN (
+				SELECT max(talk_id) FROM talks 
+				WHERE user_id =#{userId} and received = 1 
+				GROUP BY with_talk)
 		ORDER BY reg_date DESC
 	</select>
 

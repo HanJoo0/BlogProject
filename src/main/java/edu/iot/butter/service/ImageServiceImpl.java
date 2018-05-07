@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import edu.iot.butter.dao.ImageDao;
 import edu.iot.butter.model.Image;
+import edu.iot.butter.model.Member;
 import edu.iot.butter.model.Pagination;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
@@ -54,6 +55,7 @@ public class ImageServiceImpl implements ImageService {
 	@Autowired
 	ServletContext context;
 	
+	@Override
 	public void saveImage(Image image, MultipartFile file) throws Exception {
 		String fileName = file.getOriginalFilename();
 		String newName = saveImage(fileName, file);

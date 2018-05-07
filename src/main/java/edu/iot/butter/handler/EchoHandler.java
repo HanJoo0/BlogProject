@@ -16,11 +16,11 @@ public class EchoHandler extends TextWebSocketHandler {
 				CloseStatus status) throws Exception {
 		Member member = (Member) session.getAttributes().get("USER");
 		if(member != null)
-			System.out.println(member.getUserId() + " �빐�젣");
+			System.out.println(member.getUserId() + " 해제");
 		else 
-			System.out.println(" �빐�젣");
-  
-  
+			System.out.println(" 해제");
+
+
 		super.afterConnectionClosed(session, status);
 	}
 
@@ -29,9 +29,9 @@ public class EchoHandler extends TextWebSocketHandler {
 	throws Exception {
 		Member member = (Member) session.getAttributes().get("USER");
 		if(member != null)
-			System.out.println(member.getUserId() + " �젒�냽");
+			System.out.println(member.getUserId() + " 접속");
 		else
-			System.out.println(" �젒�냽");
+			System.out.println(" 접속");
 
 		super.afterConnectionEstablished(session);
 

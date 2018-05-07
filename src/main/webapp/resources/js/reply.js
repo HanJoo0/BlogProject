@@ -44,18 +44,19 @@ function makeDom(datas) {
 }
 
 //트리 구조를 탐색하여 Media Object 구조 생성 
-function makeMediaObject(writer, item) {
+function makeMediaObject(reply, writer) {
+	
 	// 단말 노드
-	if(item.children.length==0) {
-		return replyTempl.mediaObjectTempl(item, writer);
+	if(reply.children.length==0) {
+		return replyTempl.mediaObjectTempl(reply, writer);
 	}
 
+	var self = replyTempl.mediaObjectTempl(reply, writer);
+
 	// 중간 노드 
-	var self = replyTempl.mediaObjectTempl(item, writer);
-	item.children.forEach(child=>{
-		var child = makeMediaObject(writer, child);
-		 self.find('.children').eq(0)	//첫번째 칠드런에 추가
-		 .append(child);	
+	reply.children.forEach(child=>{
+		var child = makeMediaObject(child, writer);
+		 self.find('.children').eq(0).append(child);	// eq(0) 추가	
 	});
 	return self;
 }
@@ -64,9 +65,9 @@ $.fn.replyList = function(opt) {
 	var self = this;
 	// opt = $.extend({target : this}, opt)
 	// 초기 목록 구성 
-	opt.api.list('', function(datas) {
-		makeDom(datas).forEach(function(item){
-			self.append(makeMediaObject(opt.writer, item))		
+	opt.api.list('', function(replyList) {
+		makeDom(replyList).forEach(function(reply){
+			self.append(makeMediaObject(reply, opt.writer))		
 		}); 
 	});
 	
@@ -96,7 +97,7 @@ $.fn.replyList = function(opt) {
 		opt.api.create(reply,function(result){
 			if(result) {
 				result.regDate = new Date(result.regDate);
-				obj.find('.children').eq(0)	//첫번째 칠드런에 추가
+				obj.find('.children').eq(0)	// 추가
 					.prepend(
 							replyTempl.mediaObjectTempl(result, reply.writer));
 				obj.find('.work').empty();

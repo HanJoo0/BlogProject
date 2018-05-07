@@ -32,9 +32,7 @@ public class GalleryController {
 	}
 	
 	@RequestMapping("/api_view")	
-	public void api_view() throws Exception {	
-		
-		
+	public void api_view() throws Exception {
 	}
 	
 	@RequestMapping("/lightbox")	
@@ -80,7 +78,7 @@ public class GalleryController {
 		Pagination pagination = service.getPagination(page);
 		model.addAttribute("pagination", pagination);
 		model.addAttribute("list", service.getList(pagination));
-	}	
+	}
 	
 	
 	@RequestMapping(value="/upload", method=RequestMethod.GET)	

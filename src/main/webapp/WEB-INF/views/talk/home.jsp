@@ -18,7 +18,8 @@
 						<a href="with?userId=${USER.userId}&withTalk=${member.userId}">
 							${member.userId}
 							<c:if test="${member.newMessages>0}">
-								<span class="badge badge-pill pink">
+								<span class="badge badge-pill" 
+									style="background:tomato">
 									${member.newMessages}
 								</span>
 							</c:if> 
@@ -33,7 +34,6 @@
 				<div class="media my-1">
 				    <img class="d-flex mr-3 rounded-circle avata" 
 				    	src="${root}member/avata?userId=${member.userId}">
-				    	
 				    <div class="media-body talk-message">
 						<a href="with?userId=${USER.userId}&withTalk=${talk.withTalk}">
 							<div style="overflow:hidden">
@@ -43,7 +43,6 @@
 											pattern="yyyy-MM-dd hh:mm:ss"/>
 								</div>
 							</div>
-							
 							<div>${talk.message }</div>
 						</a>
 				    </div>

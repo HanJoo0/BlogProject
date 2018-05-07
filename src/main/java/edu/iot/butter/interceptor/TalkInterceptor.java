@@ -27,11 +27,9 @@ public class TalkInterceptor extends HandlerInterceptorAdapter {
 		if(member != null) {
 			List<Talk> talks = service.getNewTalks(member.getUserId());
 			if(talks.size()>0) {
-				System.out.println(talks.size());
 				request.setAttribute("newTalks", talks.size());
 			}
 		}		
-		// return super.preHandle(request, response, handler);
 		return true;
 	}	
 }

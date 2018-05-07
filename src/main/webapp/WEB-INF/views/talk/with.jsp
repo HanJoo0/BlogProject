@@ -15,7 +15,7 @@ $(function(){
 		withTalk : '${param.withTalk}',		// 대화 상대방 ID
 		url : '/butter/talk', 				// 웹 소켓 url
 		sendBtn : $('#send-btn'),			// 전송 버튼 
-		sendMessage : $('#send-message'),// 전송 메시지 엘리먼트
+		sendMessage : $('#send-message'),	// 전송 메시지 엘리먼트
 	});
 });
 </script>
@@ -28,7 +28,8 @@ $(function(){
 			</h3>
 		</div>
 		
-		<div class="card-body scroll" style="height:20rem; overflow : scroll">
+		<div class="card-body scroll" 
+				style="height:20rem;overflow:scroll">
 			<div id="messages"></div>
 		</div>
 	

@@ -75,7 +75,7 @@ public class MemberServiceImpl
 
 	@Override
 	public Pagination getPagination(int page) throws Exception {
-		int total = 123; //dao.getCount();
+		int total = dao.getCount();
 		return new Pagination(page, total);
 	}
 

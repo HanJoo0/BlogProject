@@ -29,7 +29,7 @@
 			<list>
 				<value>classpath:mapper/**/*-mapper.xml</value>
 			</list>
-	</property>
+		</property>
 	</bean>
 		<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" 

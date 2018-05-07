@@ -18,4 +18,6 @@ public interface ImageService {
 	Image getImage(int id) throws Exception ;
 	
 	boolean upload(Image image, List<MultipartFile> fileList) throws Exception ;
+
+	void saveImage(Image image, MultipartFile file) throws Exception;
 }

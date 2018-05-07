@@ -30,6 +30,7 @@
 		where
 			m.user_id <> #{userId} and 
 			m.user_id = t.with_talk(+)
+		order by t.newMessages DESC
 	]]></select>
 
 	<select id="selectOne" resultType="Member" parameterType="String"><![CDATA[

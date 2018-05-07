@@ -40,6 +40,8 @@ public class TalkController {
 		String userId = member.getUserId();
 		model.addAttribute("memberList", 
 				service.getListWithMessages(userId));
+
+		// 대화상대별 최근 talk 한개 리스트 
 		model.addAttribute("talkList", 
 				talkService.selectOneListPerUser(userId));
 	}

@@ -3,7 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<c:url value="/" var="root"/>
 <link href="${root}resources/bower_components/lightbox2/dist/css/lightbox.css" rel="stylesheet">
 <script src="${root}resources/bower_components/lightbox2/dist/js/lightbox.js"></script>
 

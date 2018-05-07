@@ -8,7 +8,7 @@
 <script>
 $(function(){
 	var api = new FlickrApi();
-	api.search('butter');		// api.recent();
+	api.search('orange');		// api.recent();
 
 	$('#search').click(function(){
 		var keyword = $('#keyword').val();

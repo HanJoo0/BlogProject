@@ -1,4 +1,4 @@
-package edu.iot.butter.service;
+package edu.iot.butter;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import edu.iot.butter.model.Avata;
+import edu.iot.butter.service.MemberService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
@@ -16,18 +16,12 @@ import edu.iot.butter.model.Avata;
 	"classpath:config/database-context.xml"
 })
 @WebAppConfiguration
-public class MemberServiceTest {
+public class MemberControllerTest {
 	@Autowired
 	MemberService service;
 	
 	@Test
-	public void testDaoDI() {
-		assert service != null : "service 바인딩 실패";
+	public void testMemberServiceDI() {
+		assert service != null :"MemberService는 null이 되면 안됨";
 	}
-	
-/*	@Test 
-	public void testAvata() throws Exception {
-		byte[] image = service.getAvata("admin");
-		assert image != null : "image 추출 실패";
-	}*/
 }

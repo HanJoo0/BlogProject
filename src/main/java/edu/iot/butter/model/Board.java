@@ -14,7 +14,8 @@ public class Board {
 	private String 	title;
 	@NotEmpty(message="작성자는 필수항목입니다.")
 	private String 	writer;
-
+	@NotEmpty(message="비밀번호는 필수항목입니다.")
+	private String 	password;
 	private int		readCnt;
 	
 	private List<Attachment> attachments;

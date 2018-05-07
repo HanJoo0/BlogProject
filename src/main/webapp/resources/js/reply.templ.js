@@ -34,22 +34,26 @@ var replyTempl = {
 	    
 	},
 	
-	addButtonTempl : '<button class="reply-add-show"><i class="fa fa-reply"></i> 댓글쓰기 </button>',
-	editButtonTempl : '<button class="reply-edit-show"><i class="fa fa-edit"></i> 수정 </button>',
-	deleteButtonTempl : '<button class="reply-delete"><i class="fa fa-trash"></i> 삭제 </button>',
+	addButtonTemp : '<button class="reply-add-show"><i class="fa fa-reply"></i></button>',
+	editButtonTemp : '<button class="reply-edit-show"><i class="fa fa-edit"></i></button>',
+	deleteButtonTemp : '<button class="reply-delete"><i class="fa fa-trash"></i></button>',
 	
 	buttonsTempl : function(media, reply, writer) {
 		// 삭제 글이 아닌 경우
+		
 		if(!reply.deleted) {
 			// 로그인 사용자인경우 댓글 버튼 추가
-			if(writer != '') {	// 자신의 댓글이 아닌 경우 writer != reply.writer 
-				media.find('.buttons').append($(this.addButtonTempl));
+			
+			if(writer != '') {	// 자신의 댓글이 아닌 경우 writer != reply.writer
+				console.log(this.addButtonTempl)
+				media.find('.buttons').append('<button class="reply-add-show"><i class="fa fa-reply"></i></button>');
 			}
 			// 자신이 작성한 댓글인경우 수정 버튼과 삭제 버튼 추가
 			if(reply.writer == writer) {
-				media.find('.buttons')
-					.append($(this.editButtonTempl))
-					.append($(this.deleteButtonTempl));							
+				console.log('edit')
+				media.find('.buttons').append('<button class="reply-edit-show"><i class="fa fa-edit"></i></button>');
+				console.log('remove')
+				media.find('.buttons').append('<button class="reply-delete"><i class="fa fa-trash"></i></button>');							
 			}
 		} else {	// 삭제된 댓글
 			media.addClass('deleted-reply')
@@ -58,12 +62,12 @@ var replyTempl = {
 	
 	addTempl : `
 		<textarea></textarea>
-		<button class="reply-add"><i class="fa fa-share-square"></i> 확인 </button>
-		<button class="reply-cancel"><i class="fa fa-undo"></i> 취소 </button>`,
+		<button class="reply-add"><i class="fa fa-share-square"></i></button>
+		<button class="reply-cancel"><i class="fa fa-undo"></i></button>`,
 	editTempl :`
 		<textarea></textarea>
-		<button class="reply-edit"><i class="fa fa-share-square"></i> 확인 </button>
-		<button class="reply-edit-cancel"><i class="fa fa-undo"></i>취소 </button>`,
+		<button class="reply-edit"><i class="fa fa-share-square"></i></button>
+		<button class="reply-edit-cancel"><i class="fa fa-undo"></i></button>`,
 
 }
 	
