@@ -22,7 +22,7 @@
 		<div>
 			<input type="file" multiple="multiple" 
 					name="imageFiles"
-					accept="image/*" required>
+					accept="image/*" >
 		</div>
 		<div class="text-center">
 			<button type="submit" class="btn btn-primary btn-md">

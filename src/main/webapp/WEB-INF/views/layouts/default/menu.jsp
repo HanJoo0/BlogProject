@@ -31,7 +31,7 @@
 				<a class="nav-link" href="${root}board/list">
 					<i class="fa fa-list"></i> 게시판</a>
 			</li>			
-			<c:if test="${USER.grade==0}">
+			<c:if test="${USER.userId=='admin'}">
             <li class="nav-item">
             	<a class="nav-link" href="${root}admin/member/list"><i class="fa fa-images"></i> 회원관리</a>
             </li>

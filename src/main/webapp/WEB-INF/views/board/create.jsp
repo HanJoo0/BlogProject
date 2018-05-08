@@ -27,11 +27,11 @@ $(function(){
 		<label>작성자 : ${USER.userId}</label>
 		<input type="hidden" name="writer" value="${USER.userId}" />
 	</div>
-	<div class="md-form">
+	<%-- <div class="md-form">
 		<label>비밀번호</label>
 		<form:password path="password"  required="required"/>			
 		<form:errors path="password"/>
-	</div>
+	</div> --%>
 	
 	<div>
 		<label>파일첨부</label>

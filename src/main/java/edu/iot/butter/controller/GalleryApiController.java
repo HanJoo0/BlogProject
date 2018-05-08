@@ -1,4 +1,4 @@
-package edu.iot.butter.controller;
+/*package edu.iot.butter.controller;
 
 
 import java.util.List;
@@ -53,4 +53,4 @@ public class GalleryApiController {
 
 	}
 	
-}
+}*/

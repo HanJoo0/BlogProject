@@ -20,7 +20,6 @@
 		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/"
 		cache-period="0" />
-	<resources mapping="/images/**" location="/resources/images/" />
 
 
 	<interceptors>

@@ -27,8 +27,8 @@
 	<insert id="insert" parameterType="Board"
 		useGeneratedKeys="true" keyColumn = "board_id" keyProperty="boardId">
 		insert into boards 
-		(board_id, title, writer, password, read_cnt, content, reg_date, update_date)
-		values(BOARDS_SEQ.NEXTVAL, #{title}, #{writer}, #{password}, 0, 
+		(board_id, title, writer, read_cnt, content, reg_date, update_date)
+		values(BOARDS_SEQ.NEXTVAL, #{title}, #{writer}, 0, 
 			#{content}, sysdate, sysdate)	
 	</insert>
 
@@ -48,7 +48,7 @@
 	
 	<delete id="delete" parameterType="int">
 		DELETE FROM board
-		WHERE board_id=#{boardId}  and password=#{password}
+		WHERE board_id=#{boardId} 
 	</delete>
 </mapper>
 	

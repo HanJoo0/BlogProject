@@ -61,8 +61,7 @@ public class ImageServiceImpl implements ImageService {
 		String newName = saveImage(fileName, file);
 		String thumbName = saveThumb(newName);
 		
-//		Tika tika = new Tika();
-//		String mimeType = tika.detect(fileName);
+
         String mimeType = context.getMimeType(fileName);
         
 		image.setFileName(fileName);
