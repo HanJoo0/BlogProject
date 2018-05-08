@@ -33,7 +33,7 @@
 			<c:forEach var="talk" items="${talkList}">		
 				<div class="media my-1">
 				    <img class="d-flex mr-3 rounded-circle avata" 
-				    	src="${root}member/avata?userId=${member.userId}">
+				    	src="${root}member/avata?userId=${talk.userId}">
 				    <div class="media-body talk-message">
 						<a href="with?userId=${USER.userId}&withTalk=${talk.withTalk}">
 							<div style="overflow:hidden">
